@@ -32,7 +32,7 @@ O desafio consiste em identificar se uma imagem foi gerada por Inteligência Art
 ## 🌐 Acesse o Site
 
 O site está hospedado no GitHub Pages. Acesse e divirta-se:  
-[https://joaogaabb.github.io/DesafioIA](https://joaogaabb.github.io/DesafioIA)
+[https://github.com/joaogaabb/Desafio-IA.git] 
 
 ---
 
