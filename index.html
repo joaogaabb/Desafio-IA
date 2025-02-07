@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio IA: Real ou Virtual?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      color: #333;
+      margin-top: 50px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="home">
+    <h1>Desafio IA: Real ou Virtual?</h1>
+    <p>Será que você consegue identificar o que é real e o que foi gerado por IA?</p>
+    <button onclick="startGame()">Iniciar Desafio</button>
+  </div>
+
+  <div class="container hidden" id="game">
+    <h2>O que você acha?</h2>
+    <img id="image" src="" alt="Imagem do desafio">
+    <button onclick="checkAnswer('real')">Real</button>
+    <button onclick="checkAnswer('ia')">Gerado por IA</button>
+    <p id="result"></p>
+    <button onclick="nextImage()" class="hidden" id="nextButton">Próxima Imagem</button>
+  </div>
+
+  <div class="container hidden" id="results">
+    <h2>Resultado Final</h2>
+    <p>Você acertou <span id="score">0</span> de <span id="total">0</span> imagens!</p>
+    <button onclick="restartGame()">Jogar Novamente</button>
+  </div>
+
+  <script>
+    // Lista de imagens (substitua pelos seus links)
+    const images = [
+      { src: "https://exemplo.com/real1.jpg", type: "real" },
+      { src: "https://exemplo.com/ia1.jpg", type: "ia" },
+      { src: "https://exemplo.com/real2.jpg", type: "real" },
+      { src: "https://exemplo.com/ia2.jpg", type: "ia" },
+    ];
+
+    let currentIndex = 0;
+    let score = 0;
+
+    // Função para iniciar o jogo
+    function startGame() {
+      document.getElementById("home").classList.add("hidden");
+      document.getElementById("game").classList.remove("hidden");
+      showImage();
+    }
+
+    // Função para mostrar a imagem atual
+    function showImage() {
+      const imageElement = document.getElementById("image");
+      imageElement.src = images[currentIndex].src;
+      document.getElementById("result").textContent = "";
+      document.getElementById("nextButton").classList.add("hidden");
+    }
+
+    // Função para verificar a resposta
+    function checkAnswer(answer) {
+      const correctAnswer = images[currentIndex].type;
+      const resultElement = document.getElementById("result");
+
+      if (answer === correctAnswer) {
+        resultElement.textContent = "Correto! 🎉";
+        score++;
+      } else {
+        resultElement.textContent = "Errado! 😅";
+      }
+
+      document.getElementById("nextButton").classList.remove("hidden");
+    }
+
+    // Função para passar para a próxima imagem
+    function nextImage() {
+      currentIndex++;
+      if (currentIndex < images.length) {
+        showImage();
+      } else {
+        endGame();
+      }
+    }
+
+    // Função para finalizar o jogo
+    function endGame() {
+      document.getElementById("game").classList.add("hidden");
+      document.getElementById("results").classList.remove("hidden");
+      document.getElementById("score").textContent = score;
+      document.getElementById("total").textContent = images.length;
+    }
+
+    // Função para reiniciar o jogo
+    function restartGame() {
+      currentIndex = 0;
+      score = 0;
+      document.getElementById("results").classList.add("hidden");
+      startGame();
+    }
+  </script>
+</body>
+</html>
