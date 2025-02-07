@@ -26,25 +26,21 @@ O desafio consiste em identificar se uma imagem foi gerada por Inteligência Art
 
 ---
 
-## 📸 Captura de Tela
-
-![Captura de Tela do Site](images/screenshot.png)  
-*(Adicione uma imagem ou gif mostrando o site em funcionamento.)*
 
 ---
 
 ## 🌐 Acesse o Site
 
 O site está hospedado no GitHub Pages. Acesse e divirta-se:  
-[https://seu-usuario.github.io/nome-do-repositorio](https://seu-usuario.github.io/nome-do-repositorio)
+[https://joaogaabb.github.io/DesafioIA](https://joaogaabb.github.io/DesafioIA)
 
 ---
 
 ## 📝 Como Contribuir
 
 Contribuições são bem-vindas! Siga os passos abaixo:
-
-1. Faça um *fork* do repositório.  
+ 
+Faça um *fork* do repositório.  
 2. Crie uma branch para sua feature: `git checkout -b minha-feature`.  
 3. Commit suas mudanças: `git commit -m 'Adicionando nova funcionalidade'`.  
 4. Envie para o repositório remoto: `git push origin minha-feature`.  
@@ -58,4 +54,4 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ---
 
-Feito com ❤️ por [Seu Nome](https://github.com/seu-usuario).
+Feito com ❤️ por [Arthur Gabriel, Carlos Eduardo, Danilo Antonio, João Gabriel Santana, Nicolas Baldini e Pedro Lucas. ](https://github.com/joaogaabb).
